@@ -1,10 +1,12 @@
 <h1>Posts</h1>
 <table>
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.reverse_each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
+        <td><%= link_to post.title, post_path(post) %></td>
+        <td>Posted on <%= post.created_at %></td>
+        <td><%= simple_format post.body.truncate(750) %></td>
+        <td><%= link_to 'read more', post %></td>
       </tr>
     <% end %>
   </tbody>
