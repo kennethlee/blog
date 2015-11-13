@@ -15,6 +15,12 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def create
+    @post = Post.new(post_params)
+    @post.save
+    redirect_to @post
+  end
+
   private
 
     def set_post
