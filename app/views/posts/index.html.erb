@@ -1,7 +1,4 @@
 <h1 class="center">Kenny Lee</h1>
-<% if admin_signed_in? %>
-  <%= link_to "New post", new_post_path %>
-<% end %>
 <%= link_to 'About', about_path %>
 <% @posts.each do |post| %>
     <h3><td><%= link_to post.title, post_path(post) %></td></h3>
