@@ -3,7 +3,7 @@
   <%= link_to "New post", new_post_path %>
 <% end %>
 <%= link_to 'About', about_path %>
-<% @posts.reverse_each do |post| %>
+<% @posts.each do |post| %>
     <h3><td><%= link_to post.title, post_path(post) %></td></h3>
     <td>Posted on <%= post.created_at %></td>
     <p><%= simple_format post.body.truncate(750) %><%= link_to 'read more', post %></p>
