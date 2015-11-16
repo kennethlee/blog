@@ -1,9 +1,12 @@
+<%= link_to "Back", posts_path %>
 <h1><%= @post.title %></h1>
 <div class="date"><%= @post.created_at.strftime("%B %d, %Y") %></div><br />
 <p><%= @post.body %></p>
 
-<%= link_to "Back", posts_path %>
 <% if admin_signed_in? %>
-  <%= link_to "Edit post", edit_post_path %>
-  <%= link_to "Delete post", @post, method: :delete, data: { confirm: "You sure?" } %>
+  <div class="center">
+    <%= link_to "Edit post", edit_post_path, class: "btn btn-secondary-outline" %>
+    <%= link_to "Delete post", @post, method: :delete, data: { confirm: "You sure?" },
+      class: "btn btn-danger-outline" %>
+  </div>
 <% end %>
