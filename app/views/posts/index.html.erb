@@ -1,7 +1,12 @@
 <h1 class="center">Kenny Lee</h1>
-<%= link_to 'About', about_path %>
+<ul class="list-inline center">
+  <li><h3><%= link_to 'About', about_path %></h3></li>
+  <li><h3><%= link_to 'Blah', '#' %></h3></li>
+  <li><h3><%= link_to 'Filler', '#' %></h3></li>
+</ul>
+<hr>
 <% @posts.each do |post| %>
-    <h3><td><%= link_to post.title, post_path(post) %></td></h3>
+    <h2><td><%= link_to post.title, post_path(post) %></td></h2>
     <div class="date"><%= post.created_at.strftime("%B %d, %Y") %></div>
     <p><%= simple_format post.body.truncate(750) %><%= link_to 'read more', post %></p>
 <% end %>
