@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-    <h2><td><%= link_to post.title, post_path(post) %></td></h2>
+    <h3><td><%= link_to post.title, post_path(post) %></td></h3>
     <div class="date"><%= post.created_at.strftime("%B %d, %Y") %></div>
     <p><%= simple_format post.body.truncate(750) %><%= link_to 'read more', post %></p>
 <% end %>
