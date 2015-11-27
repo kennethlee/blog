@@ -1,5 +1,5 @@
 <h4><%= @post.title %></h4>
-<div class="date"><%= @post.created_at.strftime("%B %d, %Y") %></div><br />
+<div class="date"><%= @post.created_at.strftime("%B %d, %Y") %></div>
 <p><%= simple_format(@post.body) %></p>
 
 <% if admin_signed_in? %>
